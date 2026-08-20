@@ -1,0 +1,1 @@
+import express from'express';import{documents}from'./domain.mjs';const d=documents(),a=express();a.get('/health',(_,r)=>r.json({status:'ok',documents:d.items.length}));a.listen(Number(process.env.DOCUMENT_PORT)||22800,'0.0.0.0');
